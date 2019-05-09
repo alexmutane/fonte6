@@ -1,0 +1,7 @@
+{
+  "name": "fonte6",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
