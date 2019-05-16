@@ -1,16 +1,21 @@
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page }])
+    RouterModule.forChild([{ path: '', component: Tab1Page }]),
+    TranslateModule.forRoot()
+  ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   declarations: [Tab1Page]
 })
