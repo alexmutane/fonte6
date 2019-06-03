@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="bibliaService.livroSelecionado">
+      {{ bibliaService.livroSelecionado.bookPT }} 
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-icon class="home-more" name="more" slot="end" (click)="abrirDefinicoes()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="bibliaService.livroSelecionado">
+
+  <div *ngFor="let capitulo of bibliaService.numeroDeCapitulos">
+    <ion-grid>
+      <ion-row size="12">
+        
+        <ion-col class="biblia-listalivros" (click)="tocarCapitulo(bibliaService.livroSelecionado)">
+          <ion-col size="2" class="listalivros-code">
+            <strong>{{ bibliaService.livroSelecionado.bookCodePT | uppercase }}</strong>
+          </ion-col>
+          <ion-col size="8">
+            {{ bibliaService.livroSelecionado.bookPT | uppercase }}
+            &nbsp;&nbsp;&nbsp;
+            {{ capitulo }}
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon name="play"></ion-icon>
+          </ion-col>
+        </ion-col>
+        
+        <ion-col class="opcoes" size="2">
+          <ion-icon name="add" item-end></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>

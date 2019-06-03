@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ pageTitle }} 
+      <ion-icon class="trocar-test" name="swap" (click)="trocarTestamento()"></ion-icon>
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-icon class="home-more" name="more" slot="end" (click)="abrirDefinicoes()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let livro of bibliaService.listaDeLivros">
+    <ion-grid>
+      <ion-row size="12" class="biblia-listalivros" (click)="listarCapitulos(livro)">
+        <ion-col size="2" class="listalivros-code">
+          <strong>{{ livro.bookCodePT | uppercase }}</strong>
+        </ion-col>
+        <ion-col size="6">
+          {{ livro.bookPT | uppercase }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>

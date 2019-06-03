@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pregacoes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-icon class="home-more" name="more" slot="end" (click)="abrirDefinicoes()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let pregacao of pregacoesService.listaDePregacoes">
+    <h2>{{ pregacao.titulo }}</h2>
+    <p>{{ pregacao.pregador.pt_name }}</p>
+    <p>{{ pregacao.igreja.pt_name }}</p>
+  </div>
+</ion-content>
